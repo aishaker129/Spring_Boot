@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.rest.bootrestbook.helper.FileUploadHelper;
 
@@ -46,7 +47,8 @@ public class FileUploadController {
             boolean f = fileUp.uploadFile(file);
 
             if (f) {
-                return ResponseEntity.ok("File is uploaded successfully");
+                // return ResponseEntity.ok("File is uploaded successfully");
+                return ResponseEntity.ok(ServletUriComponentsBuilder.fromCurrentContextPath().path("/images/").path(file.getOriginalFilename()).toUriString());
             }
 
         } catch (Exception e) {

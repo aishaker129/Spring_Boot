@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Loop Example</title>
+</head>
+<body>
+	<h1>This is Iterable Phase Where every element is viewing.....</h1>
+	<h1>The list is <span th:text="${name}"></span></h1>
+	<ul>
+		<li th:each = "n,status : ${name}">
+			<span th:style = "${status.odd} ? 'color:green;font-weight:bold' : 'color:blue'" th:text = "${status.index} + ' ' + ${n}"></span>
+		</li>
+	</ul>
+</body>
+</html>
