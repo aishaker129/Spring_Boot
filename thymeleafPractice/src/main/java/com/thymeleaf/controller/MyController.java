@@ -35,4 +35,20 @@ public class MyController {
 		m.addAttribute("name",names);
 		return "iterator";
 	}
+	
+	// Conditional Statement in Thymeleaf
+	@GetMapping("/condition")
+	public String conditionalHandler(Model m) {
+		m.addAttribute("isActive",false);
+		m.addAttribute("gender","M");
+		List<Integer> list = List.of(1,2,3,4,5,6);
+		m.addAttribute("myList",list);
+		return "conditional";
+	}
+	
+	// handel for including fragment
+	@GetMapping("/services")
+	public String servicesHandler(Model m) {
+		return "services";
+	}
 }
