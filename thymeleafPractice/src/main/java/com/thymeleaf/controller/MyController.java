@@ -49,6 +49,13 @@ public class MyController {
 	// handel for including fragment
 	@GetMapping("/services")
 	public String servicesHandler(Model m) {
+		m.addAttribute("title","Java Spring Boot");
+		m.addAttribute("subtitle","Best stack for microservices");
 		return "services";
+	}
+	
+	@GetMapping("/newabout")
+	public String newAbout() {
+		return "aboutNew";
 	}
 }

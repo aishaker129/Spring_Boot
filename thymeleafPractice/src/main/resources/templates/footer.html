@@ -5,11 +5,11 @@
 	<title>Footer Template</title>
 </head>
 <body>
-	<footer id="fragmentTag" th:fragment="footer1">
+	<footer id="fragmentTag" th:fragment="footer1('title','subtitle')">
 	
 		<div class="contant">
-			<h1>Hello This is Learning Phase for Java Spring Boot</h1>
-			<h2>Follow me to proper guidline</h2>
+			<h1 th:text="${title}"></h1>
+			<h2 th:text="${subtitle}"></h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At delectus voluptatum nostrum beatae illo quae aliquid dignissimos repellat quo atque corporis quia veritatis nulla architecto quibusdam officia repudiandae ut! Necessitatibus repellendus id quasi nisi ad vero iure maxime voluptatem veritatis accusantium ipsam minima corporis maiores ipsa sequi? Delectus vitae magnam!</p>
 		</div>
 	
